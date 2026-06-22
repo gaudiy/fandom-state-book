@@ -1,7 +1,7 @@
 {
   "title": "Fandom State",
   "description": "Markdownで共同編集する書籍プロジェクト",
-  "repo": "https://github.com/gaudiy/fandom-state-book",
+  "repo": "https://github.com/hanahanayaman/fandom-state-book",
   "languages": [
     { "code": "ja", "label": "日本語", "home": "/ja/" },
     { "code": "en", "label": "English", "home": "/en/" }
