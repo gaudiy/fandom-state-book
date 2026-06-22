@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/chapter.njk",
+  "lang": "en",
+  "permalink": "/en/chapters/{{ slug }}/index.html"
+}

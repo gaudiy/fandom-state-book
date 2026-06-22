@@ -1,0 +1,17 @@
+{
+  "name": "fandom-state-book",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Markdownで共同編集する書籍プロジェクト（Bun + Eleventy + GitHub Pages）",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf dist",
+    "check": "bun run scripts/validate-frontmatter.ts",
+    "toc": "bun run scripts/generate-toc.ts"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

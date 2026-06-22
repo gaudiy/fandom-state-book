@@ -1,0 +1,9 @@
+<nav class="lang-switcher" aria-label="言語切り替え">
+  {% for l in site.languages %}
+    <a
+      class="lang-switcher__item{% if l.code == lang %} is-active{% endif %}"
+      href="{{ l.home }}"
+      hreflang="{{ l.code }}"
+    >{{ l.label }}</a>
+  {% endfor %}
+</nav>

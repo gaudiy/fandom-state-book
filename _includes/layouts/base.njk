@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'ja' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    {% include "components/header.njk" %}
+    <main class="content">
+      {{ content | safe }}
+    </main>
+    {% include "components/footer.njk" %}
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

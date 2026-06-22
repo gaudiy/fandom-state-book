@@ -1,0 +1,108 @@
+:root {
+  --max-width: 46rem;
+  --fg: #1a1a1a;
+  --bg: #ffffff;
+  --muted: #666;
+  --accent: #2b6cb0;
+  --border: #e2e2e2;
+  --font-body: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", Meiryo, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; }
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: var(--font-body);
+  line-height: 1.8;
+}
+
+a { color: var(--accent); }
+
+/* --- header / footer --------------------------------------------------- */
+.site-header,
+.site-footer {
+  border-bottom: 1px solid var(--border);
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  margin-top: 4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.site-header__inner,
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-header__brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+/* --- language switcher ------------------------------------------------- */
+.lang-switcher { display: flex; gap: 0.75rem; font-size: 0.9rem; }
+.lang-switcher__item { text-decoration: none; }
+.lang-switcher__item.is-active { font-weight: 700; color: var(--fg); }
+
+/* --- main content ------------------------------------------------------ */
+.content {
+  max-width: var(--max-width);
+  margin: 2.5rem auto;
+  padding: 0 1.25rem;
+}
+
+h1, h2, h3 { line-height: 1.4; }
+
+/* --- chapter ----------------------------------------------------------- */
+.chapter__header { margin-bottom: 2rem; }
+.chapter__order { color: var(--muted); margin: 0 0 0.25rem; font-size: 0.9rem; }
+.chapter__title { margin: 0; }
+
+img { max-width: 100%; height: auto; }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--border);
+  color: var(--muted);
+  background: #fafafa;
+}
+
+/* --- table of contents ------------------------------------------------- */
+.toc { list-style: none; padding: 0; }
+.toc__item { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.toc__item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.toc__order { color: var(--muted); font-variant-numeric: tabular-nums; }
+.toc__title { font-weight: 600; }
+.toc__desc { margin: 0.25rem 0 0 2.4rem; color: var(--muted); font-size: 0.9rem; }
+
+/* --- chapter navigation ------------------------------------------------ */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.chapter-nav a { text-decoration: none; }
+.chapter-nav__next { text-align: right; }
