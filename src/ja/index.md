@@ -3,10 +3,10 @@ layout: layouts/page.njk
 title: "日本語版"
 permalink: /ja/index.html
 lang: "ja"
-description: "Fandom State 日本語版の目次。"
+description: "Fandom State Book 日本語版の目次。"
 ---
 
-# Fandom State（日本語版）
+# Fandom State Book（日本語版）
 
 <ul class="toc">
 {%- for chapter in collections.chaptersJa %}

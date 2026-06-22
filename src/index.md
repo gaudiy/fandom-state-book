@@ -1,11 +1,10 @@
 ---
 layout: layouts/page.njk
-title: "Fandom State"
 permalink: /index.html
 description: "Markdownで共同編集する書籍プロジェクトのトップページ。"
 ---
 
-# Fandom State
+# Fandom State Book
 
 Markdown で原稿を管理し、Bun + Eleventy で静的サイトに変換し、
 GitHub Actions で自動ビルドして GitHub Pages で公開する書籍プロジェクトです。

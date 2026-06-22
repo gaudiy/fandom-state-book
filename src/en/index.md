@@ -3,10 +3,10 @@ layout: layouts/page.njk
 title: "English Edition"
 permalink: /en/index.html
 lang: "en"
-description: "Table of contents for the English edition of Fandom State."
+description: "Table of contents for the English edition of Fandom State Book."
 ---
 
-# Fandom State (English Edition)
+# Fandom State Book (English Edition)
 
 <ul class="toc">
 {%- for chapter in collections.chaptersEn %}
