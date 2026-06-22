@@ -11,6 +11,10 @@ export default function (eleventyConfig) {
   // 出力HTML内の "/assets/..." などのルート相対URLに pathPrefix を付与する。
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
+  // --- Markdown 設定 -----------------------------------------------------
+  // 単一改行を <br> に変換する（口上などの詩的な改行を保持するため）。
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.set({ breaks: true }));
+
   // --- コレクション（章立て） -------------------------------------------
   eleventyConfig.addCollection("chaptersJa", (api) =>
     api

@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 <article class="chapter">
   <header class="chapter__header">
-    <p class="chapter__order">第 {{ order }} 章</p>
+    {% if part %}<p class="chapter__kicker">{{ part }}</p>{% endif %}
     <h1 class="chapter__title">{{ title }}</h1>
   </header>
 

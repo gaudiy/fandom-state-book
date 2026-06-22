@@ -68,8 +68,14 @@ h1, h2, h3 { line-height: 1.4; }
 
 /* --- chapter ----------------------------------------------------------- */
 .chapter__header { margin-bottom: 2rem; }
-.chapter__order { color: var(--muted); margin: 0 0 0.25rem; font-size: 0.9rem; }
-.chapter__title { margin: 0; }
+.chapter__kicker {
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.chapter__title { margin: 0; line-height: 1.4; }
 
 img { max-width: 100%; height: auto; }
 
