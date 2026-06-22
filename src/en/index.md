@@ -12,7 +12,7 @@ description: "Table of contents for the English edition of Fandom State."
 {%- for chapter in collections.chaptersEn %}
   <li class="toc__item">
     <a href="{{ chapter.url }}">
-      <span class="toc__order">{{ chapter.data.order | pad2 }}</span>
+      <span class="toc__order">{{ chapter.data.order | pad2 }}_</span>
       <span class="toc__title">{{ chapter.data.title }}</span>
     </a>
     {%- if chapter.data.description %}

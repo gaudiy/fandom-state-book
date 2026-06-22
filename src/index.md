@@ -12,8 +12,10 @@ GitHub Actions で自動ビルドして GitHub Pages で公開する書籍プロ
 
 ## 言語を選ぶ / Choose a language
 
-- [日本語版を読む →](/ja/)
-- [Read the English edition →](/en/)
+<div class="pill-links">
+  <a class="pill pill--solid" href="/ja/">日本語版を読む ↗</a>
+  <a class="pill" href="/en/">Read the English edition ↗</a>
+</div>
 
 ---
 

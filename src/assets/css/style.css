@@ -1,21 +1,25 @@
 /* =====================================================================
-   Fandom State Book — gaudiy.com に倣ったモノクロ・ミニマルなデザイン
-   - 配色: 白／オフホワイト背景＋ニアブラックの文字（白黒基調）
-   - 書体: 見出しブランド = grandam（自社ホスト）, 本文 = Inter + Noto Sans JP
+   Fandom State Book — gaudiy.com に倣ったデザイン
+   - 配色: オフホワイト＋方眼グリッド背景／ニアブラック文字（白黒基調）
+   - 連番ナビ・等幅テクニカル表記・ピルボタン・↗ リンク
+   - 書体: 本文 = Inter + Noto Sans JP / 連番・ラベル = 等幅
    ===================================================================== */
 
 :root {
   --max-width: 44rem;
-  --bg: #ffffff;
+  --page-bg: #f2f2f2;
+  --surface: #ffffff;
   --bg-alt: #f5f5f5;
   --fg: #1a1a1a;
   --muted: #6b6b6b;
-  --line: #e5e5e5;
-  --ink: #111111; /* 強調・ボタン等の黒 */
+  --line: #e3e3e3;
+  --ink: #111111;
+  --grid: rgba(0, 0, 0, 0.045);
   --font-body: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont,
     "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  /* gaudiy.com に倣い、見出し／ブランドはジオメトリックなサンセリフで統一 */
   --font-display: "Inter", var(--font-body);
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    "Courier New", monospace;
 }
 
 * { box-sizing: border-box; }
@@ -25,7 +29,11 @@ html { font-size: 17px; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   color: var(--fg);
-  background: var(--bg);
+  background-color: var(--page-bg);
+  /* gaudiy.com の方眼グリッド背景 */
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
   font-family: var(--font-body);
   line-height: 1.85;
   font-feature-settings: "palt";
@@ -55,6 +63,7 @@ a:hover { border-color: var(--ink); }
   flex-wrap: wrap;
 }
 .draft-banner__tag {
+  font-family: var(--font-mono);
   border: 1px solid #fff;
   border-radius: 3px;
   padding: 0.05rem 0.45rem;
@@ -65,15 +74,12 @@ a:hover { border-color: var(--ink); }
 }
 .draft-banner__text { color: #e0e0e0; }
 
-/* --- header ------------------------------------------------------------ */
-.site-header {
-  border-bottom: 1px solid var(--line);
-  background: var(--bg);
-}
+/* --- header (方眼の上に透過で乗せる) ----------------------------------- */
+.site-header { background: transparent; }
 .site-header__inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.4rem 1.5rem;
+  padding: 1.6rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,25 +97,31 @@ a:hover { border-color: var(--ink); }
 }
 .site-header__brand:hover { border-bottom: none; opacity: 0.7; }
 
-/* --- language switcher ------------------------------------------------- */
-.lang-switcher { display: flex; gap: 1rem; font-size: 0.85rem; }
+/* --- language switcher (JP / EN) --------------------------------------- */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
 .lang-switcher__item {
   color: var(--muted);
   border-bottom: none;
-  padding-bottom: 2px;
+  text-transform: uppercase;
 }
 .lang-switcher__item:hover { color: var(--ink); border-bottom: none; }
-.lang-switcher__item.is-active {
-  color: var(--ink);
-  font-weight: 600;
-  border-bottom: 2px solid var(--ink);
-}
+.lang-switcher__item.is-active { color: var(--ink); font-weight: 700; }
+.lang-switcher__sep { color: #c2c2c2; margin: 0 0.5rem; }
 
-/* --- main content ------------------------------------------------------ */
+/* --- main content (方眼の上の白いシート) ------------------------------- */
 .content {
   max-width: var(--max-width);
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+  margin: 2.5rem auto 0;
+  padding: 3.5rem 3rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
 h1, h2, h3, h4 {
@@ -127,16 +139,10 @@ h2 {
 h3 { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
 
 p { margin: 1.2rem 0; }
-
 strong { font-weight: 700; }
-
 img { max-width: 100%; height: auto; }
 
-hr {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 2.5rem 0;
-}
+hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
 blockquote {
   margin: 2rem 0;
@@ -149,7 +155,7 @@ blockquote {
 blockquote p { margin: 0.5rem 0; }
 
 code {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: var(--font-mono);
   background: var(--bg-alt);
   padding: 0.1em 0.4em;
   border-radius: 3px;
@@ -164,6 +170,23 @@ code {
   letter-spacing: -0.03em;
 }
 
+/* ピルボタン（gaudiy の「くわしく見る ↗」風） */
+.pill-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.pill--solid { background: var(--ink); color: #fff; }
+.pill--solid:hover { opacity: 0.85; }
+
 /* --- chapter ----------------------------------------------------------- */
 .chapter__header {
   margin-bottom: 2.5rem;
@@ -171,39 +194,38 @@ code {
   border-bottom: 1px solid var(--line);
 }
 .chapter__kicker {
+  font-family: var(--font-mono);
   color: var(--muted);
-  margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .chapter__title { margin: 0; font-size: 1.9rem; }
-/* 章本文中の見出し（本来 h1 だったタイトルは front matter 側へ移したので h2/h3 のみ） */
 .chapter__body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
 
-/* --- table of contents ------------------------------------------------- */
+/* --- table of contents (連番テクニカル表記) --------------------------- */
 .toc { list-style: none; padding: 0; margin: 2.5rem 0 0; }
-.toc__item {
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--line);
-}
+.toc__item { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.toc__item:first-child { border-top: 1px solid var(--line); }
 .toc__item a {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
+  gap: 0.85rem;
   border-bottom: none;
 }
 .toc__item a:hover .toc__title { border-bottom: 1px solid var(--ink); }
 .toc__order {
+  font-family: var(--font-mono);
   color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  font-size: 0.85rem;
-  min-width: 1.8rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
 }
 .toc__title { font-weight: 600; color: var(--ink); }
 .toc__desc {
-  margin: 0.35rem 0 0 2.8rem;
+  margin: 0.35rem 0 0 3.1rem;
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.6;
@@ -222,15 +244,16 @@ code {
 }
 .chapter-nav a { border-bottom: none; color: var(--muted); }
 .chapter-nav a:hover { color: var(--ink); }
-.chapter-nav__index a { font-weight: 600; }
+.chapter-nav__index a {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 .chapter-nav__next { text-align: right; }
 
 /* --- footer ------------------------------------------------------------ */
-.site-footer {
-  margin-top: 6rem;
-  background: var(--ink);
-  color: #cfcfcf;
-}
+.site-footer { margin-top: 4rem; background: var(--ink); color: #cfcfcf; }
 .site-footer__inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -245,7 +268,7 @@ code {
 /* --- responsive -------------------------------------------------------- */
 @media (max-width: 600px) {
   html { font-size: 16px; }
-  .content { margin: 2.5rem auto; }
+  .content { margin: 1.5rem 1rem 0; padding: 2rem 1.4rem; border-radius: 4px; }
   .page h1 { font-size: 2rem; }
   .chapter__title { font-size: 1.5rem; }
 }

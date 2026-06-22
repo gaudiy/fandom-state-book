@@ -5,7 +5,7 @@
   "draftNotice": "このサイトはサンプル（作成中）です。掲載内容は下書きであり、確定版ではありません。",
   "repo": "https://github.com/hanahanayaman/fandom-state-book",
   "languages": [
-    { "code": "ja", "label": "日本語", "home": "/ja/" },
-    { "code": "en", "label": "English", "home": "/en/" }
+    { "code": "ja", "label": "日本語", "short": "JP", "home": "/ja/" },
+    { "code": "en", "label": "English", "short": "EN", "home": "/en/" }
   ]
 }
