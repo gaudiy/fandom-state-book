@@ -1,6 +1,8 @@
 {
   "title": "Fandom State",
   "description": "Markdownで共同編集する書籍プロジェクト",
+  "draft": true,
+  "draftNotice": "このサイトはサンプル（作成中）です。掲載内容は下書きであり、確定版ではありません。",
   "repo": "https://github.com/hanahanayaman/fandom-state-book",
   "languages": [
     { "code": "ja", "label": "日本語", "home": "/ja/" },

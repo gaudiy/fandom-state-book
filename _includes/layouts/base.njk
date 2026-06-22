@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
+    {% if site.draft %}
+    <div class="draft-banner" role="status">
+      <span class="draft-banner__tag">DRAFT</span>
+      <span class="draft-banner__text">{{ site.draftNotice }}</span>
+    </div>
+    {% endif %}
     {% include "components/header.njk" %}
     <main class="content">
       {{ content | safe }}

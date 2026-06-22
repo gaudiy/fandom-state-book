@@ -40,6 +40,31 @@ a {
 }
 a:hover { border-color: var(--ink); }
 
+/* --- draft banner ------------------------------------------------------ */
+.draft-banner {
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.draft-banner__tag {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 0.05rem 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+.draft-banner__text { color: #e0e0e0; }
+
 /* --- header ------------------------------------------------------------ */
 .site-header {
   border-bottom: 1px solid var(--line);
