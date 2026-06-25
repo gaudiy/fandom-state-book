@@ -9,7 +9,8 @@
     "build": "eleventy",
     "clean": "rm -rf dist",
     "check": "bun run scripts/validate-frontmatter.ts",
-    "toc": "bun run scripts/generate-toc.ts"
+    "toc": "bun run scripts/generate-toc.ts",
+    "translate": "bun run scripts/translate.ts"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
