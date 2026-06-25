@@ -3,7 +3,7 @@
   "description": "Markdownで共同編集する書籍プロジェクト",
   "draft": true,
   "draftNotice": "このサイトはサンプル（作成中）です。掲載内容は下書きであり、確定版ではありません。",
-  "repo": "https://github.com/hanahanayaman/fandom-state-book",
+  "repo": "https://github.com/gaudiy/fandom-state-book",
   "languages": [
     { "code": "ja", "label": "日本語", "short": "JP", "home": "/ja/" },
     { "code": "en", "label": "English", "short": "EN", "home": "/en/" }
