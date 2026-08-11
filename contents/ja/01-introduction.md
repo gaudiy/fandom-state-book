@@ -1,7 +1,8 @@
 ---
-title: "序章"
+title: "序文"
 order: 1
 slug: "introduction"
+description: "Gaudiy創業者・石川裕也による願い。"
 hideTitle: true
 ---
 
