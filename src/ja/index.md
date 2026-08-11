@@ -6,7 +6,7 @@ lang: "ja"
 description: "Fandom State Book 日本語版の目次。"
 ---
 
-# Fandom State Book（日本語版）
+# Fandom State Book
 
 <ul class="toc">
 {%- for chapter in collections.chaptersJa %}

@@ -6,7 +6,7 @@ lang: "en"
 description: "Table of contents for the English edition of Fandom State Book."
 ---
 
-# Fandom State Book (English Edition)
+# Fandom State Book
 
 <ul class="toc">
 {%- for chapter in collections.chaptersEn %}
