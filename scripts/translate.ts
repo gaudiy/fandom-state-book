@@ -123,6 +123,8 @@ function renderEn(
     `slug: ${yamlString(src.data.slug ?? "")}`,
     `part: ${yamlString(t.part ?? "")}`,
     `description: ${yamlString(t.description ?? "")}`,
+    // 見出しを出すかどうかは訳文でも同じにする（序文などの扉ページ）
+    ...(src.data.hideTitle === "true" ? ["hideTitle: true"] : []),
     `source_hash: ${yamlString(sourceHash)}`,
     "---",
     "",
