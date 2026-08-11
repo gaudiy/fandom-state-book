@@ -38,6 +38,13 @@ export default function (eleventyConfig) {
     String(value ?? 0).padStart(2, "0")
   );
 
+  // 章コレクションから slug が一致するページを探す。
+  // 言語スイッチャーが「同じ章の別言語版」へリンクするために使う。
+  // 対応する訳が未生成なら undefined を返し、呼び出し側で目次にフォールバックする。
+  eleventyConfig.addFilter("findBySlug", (chapters, slug) =>
+    slug ? (chapters ?? []).find((c) => c.data.slug === slug) : undefined
+  );
+
   // --- ディレクトリ設定 / テンプレートエンジン --------------------------
   return {
     // GitHub Pages の project site（https://gaudiy.github.io/fandom-state-book/）
