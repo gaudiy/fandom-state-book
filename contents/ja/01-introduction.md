@@ -2,7 +2,7 @@
 title: "序章"
 order: 1
 slug: "introduction"
-description: "Gaudiy創業者・石川裕也による序文。いま世界で使われている物差しへの違和感と、「ファン国家」という新しい物差しを一緒につくりたいという願い。"
+hideTitle: true
 ---
 
 この世界は、どこかおかしい。

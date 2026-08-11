@@ -2,10 +2,13 @@
 layout: layouts/base.njk
 ---
 <article class="chapter">
+  {# hideTitle: true の章は見出し（と区切り線）を出さず、扉ページのように本文から始める #}
+  {% if not hideTitle %}
   <header class="chapter__header">
     {% if part %}<p class="chapter__kicker">{{ part }}</p>{% endif %}
     <h1 class="chapter__title">{{ title }}</h1>
   </header>
+  {% endif %}
 
   <div class="chapter__body">
     {{ content | safe }}
