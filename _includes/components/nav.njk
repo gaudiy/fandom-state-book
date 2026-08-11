@@ -2,15 +2,17 @@
 {% set chapters = collections.chaptersJa if lang == "ja" else collections.chaptersEn %}
 {% set prev = chapters | getPreviousCollectionItem %}
 {% set next = chapters | getNextCollectionItem %}
+{# UI 文言はページの言語に合わせる（site.json の ui）。 #}
+{% set ui = site.ui[lang] or site.ui.ja %}
 
-<nav class="chapter-nav" aria-label="章ナビゲーション">
+<nav class="chapter-nav" aria-label="{{ ui.chapterNav }}">
   <div class="chapter-nav__prev">
     {% if prev %}
       <a href="{{ prev.url }}">← {{ prev.data.title }}</a>
     {% endif %}
   </div>
   <div class="chapter-nav__index">
-    <a href="{{ '/ja/' if lang == 'ja' else '/en/' }}">目次</a>
+    <a href="{{ '/ja/' if lang == 'ja' else '/en/' }}">{{ ui.toc }}</a>
   </div>
   <div class="chapter-nav__next">
     {% if next %}

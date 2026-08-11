@@ -1,4 +1,5 @@
-<nav class="lang-switcher" aria-label="言語切り替え">
+{%- set ui = site.ui[lang] or site.ui.ja %}
+<nav class="lang-switcher" aria-label="{{ ui.langNav }}">
   {%- for l in site.languages %}
     {%- if not loop.first %}<span class="lang-switcher__sep">/</span>{% endif %}
     {#- 章ページでは同じ slug の別言語版へ。訳が未生成の章では目次に戻す。 -#}

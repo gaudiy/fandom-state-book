@@ -7,5 +7,17 @@
   "languages": [
     { "code": "ja", "label": "日本語", "short": "JP", "home": "/ja/" },
     { "code": "en", "label": "English", "short": "EN", "home": "/en/" }
-  ]
+  ],
+  "ui": {
+    "ja": {
+      "toc": "目次",
+      "chapterNav": "章ナビゲーション",
+      "langNav": "言語切り替え"
+    },
+    "en": {
+      "toc": "Contents",
+      "chapterNav": "Chapter navigation",
+      "langNav": "Language"
+    }
+  }
 }
