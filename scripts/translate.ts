@@ -14,7 +14,7 @@
 import { createHash } from "node:crypto";
 
 const API_KEY = process.env.ANTHROPIC_API_KEY ?? "";
-const MODEL = process.env.TRANSLATE_MODEL ?? "claude-sonnet-4-6";
+const MODEL = process.env.TRANSLATE_MODEL ?? "claude-sonnet-5";
 const JA_DIR = "contents/ja";
 const EN_DIR = "contents/en";
 
@@ -82,7 +82,9 @@ async function translate(doc: Doc): Promise<{
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 8192,
+      // 思考トークンと本文の合計上限。長い章でも途中で切れないよう余裕を持たせる
+      // （非ストリーミングのため HTTP タイムアウトを避けて 16000 に留める）。
+      max_tokens: 16000,
       system,
       messages: [{ role: "user", content: user }],
     }),
@@ -92,8 +94,26 @@ async function translate(doc: Doc): Promise<{
     throw new Error(`Anthropic API ${res.status}: ${await res.text()}`);
   }
 
-  const json = (await res.json()) as { content: { type: string; text: string }[] };
-  let text = json.content.map((c) => c.text ?? "").join("").trim();
+  const json = (await res.json()) as {
+    content: { type: string; text?: string }[];
+    stop_reason: string;
+  };
+
+  // 途中で切れた場合は JSON.parse の不可解なエラーになる前に原因を明示する。
+  if (json.stop_reason === "max_tokens") {
+    throw new Error(
+      `翻訳が max_tokens で打ち切られました。scripts/translate.ts の max_tokens を上げてください。`
+    );
+  }
+  if (json.stop_reason === "refusal") {
+    throw new Error(`モデルが翻訳を拒否しました（stop_reason: refusal）。`);
+  }
+
+  let text = json.content
+    .filter((c) => c.type === "text")
+    .map((c) => c.text ?? "")
+    .join("")
+    .trim();
   // 念のため ```json ... ``` フェンスを除去
   text = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
 
