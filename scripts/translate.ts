@@ -59,11 +59,12 @@ async function translate(doc: Doc): Promise<{
 
   const system =
     "You are a professional literary translator translating a Japanese book about " +
-    '"fan states" (ファン国家) into natural, fluent, publication-quality English. ' +
+    '"Fandom States" (ファン国家) into natural, fluent, publication-quality English. ' +
     "Preserve the Markdown structure exactly: headings (#, ##, ###), lists, blockquotes (>), " +
     "bold (**), horizontal rules (---), and line breaks. Do not translate text inside code spans. " +
     "Keep the author's tone and rhetorical rhythm. Translate Japanese terms consistently " +
-    "(e.g. ファン国家 = Fan State, ファンダム = fandom, ブロードリスニング = broad listening). " +
+    "(e.g. ファン国家 = Fandom State — always this, never \"Fan State\" or \"fan nation\"; " +
+    "ファンダム = fandom, ブロードリスニング = broad listening). " +
     "Return ONLY a valid JSON object, no prose, no code fences.";
 
   const user =
