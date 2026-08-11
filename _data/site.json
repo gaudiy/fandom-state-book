@@ -2,7 +2,6 @@
   "title": "Fandom State Book",
   "description": "「ファン国家」という構想を記述する書籍プロジェクト。",
   "draft": true,
-  "draftNotice": "Fandom State Bookは制作中です。掲載内容はドラフトであり、確定版ではありません。",
   "repo": "https://github.com/gaudiy/fandom-state-book",
   "languages": [
     { "code": "ja", "label": "日本語", "short": "JP", "home": "/ja/" },
@@ -12,12 +11,16 @@
     "ja": {
       "toc": "目次",
       "chapterNav": "章ナビゲーション",
-      "langNav": "言語切り替え"
+      "langNav": "言語切り替え",
+      "draftNotice": "Fandom State Bookは制作中です。掲載内容はドラフトであり、確定版ではありません。",
+      "footerNote": "このサイトは{github}の公開リポジトリで管理されています。"
     },
     "en": {
       "toc": "Contents",
       "chapterNav": "Chapter navigation",
-      "langNav": "Language"
+      "langNav": "Language",
+      "draftNotice": "Fandom State Book is a work in progress. Everything here is a draft, not a final version.",
+      "footerNote": "This site is maintained in a public repository on {github}."
     }
   }
 }

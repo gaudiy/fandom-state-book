@@ -1,3 +1,5 @@
+{# UI 文言はページの言語に合わせる（site.json の ui）。lang 未指定のページは日本語。 #}
+{%- set ui = site.ui[lang] or site.ui.ja %}
 <!DOCTYPE html>
 <html lang="{{ lang or 'ja' }}">
   <head>
@@ -17,7 +19,7 @@
     {% if site.draft %}
     <div class="draft-banner" role="status">
       <span class="draft-banner__tag">DRAFT</span>
-      <span class="draft-banner__text">{{ site.draftNotice }}</span>
+      <span class="draft-banner__text">{{ ui.draftNotice }}</span>
     </div>
     {% endif %}
     {% include "components/header.njk" %}

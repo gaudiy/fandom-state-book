@@ -1,8 +1,11 @@
+{%- set ui = site.ui[lang] or site.ui.ja %}
+{#- リンクの属性はここ 1 箇所に持ち、文言側は {github} のプレースホルダで受ける。 -#}
+{%- set githubLink = '<a href="' + site.repo + '" target="_blank" rel="noopener noreferrer">GitHub</a>' %}
 <footer class="site-footer">
   <div class="site-footer__inner">
     <p>© 2026 Gaudiy Group Inc.</p>
     <p class="site-footer__note">
-      このサイトは<a href="{{ site.repo }}" target="_blank" rel="noopener noreferrer">GitHub</a>の公開リポジトリで管理されています。
+      {{ ui.footerNote | replace("{github}", githubLink) | safe }}
     </p>
   </div>
 </footer>
