@@ -12,18 +12,18 @@ description: "「ファン国家」という構想を記述する書籍プロジ
 何を解こうとしているのか、なぜそれを目指すのか、どうやって実現するのか。
 Gaudiy が積み上げてきた思想を、一貫した言葉で残すために書かれています。
 
-ここで読めるのは、制作中の物理書籍に向けた**ドラフト**です。
+ここで読めるのは、制作中の物理書籍に向けたドラフトです。
 完成した本だけを見せるのではなく、書かれていく過程のまま公開しています。
 
 <div class="lede-en" lang="en">
-  <p>A book project describing the idea of a <strong>Fandom State</strong>.</p>
+  <p>A book project describing the idea of a Fandom State.</p>
   <p>
     A Fandom State is a community you join not by where you were born, but by the vision
     you share. What are we trying to solve, why aim for it, and how do we get there?
     This book sets out the thinking Gaudiy has built up, in one consistent voice.
   </p>
   <p>
-    What you can read here is a <strong>draft</strong> of a book we are currently producing
+    What you can read here is a draft of a book we are currently producing
     in print. Rather than showing only the finished text, we publish the manuscript as it
     is written.
   </p>
