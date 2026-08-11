@@ -170,6 +170,18 @@ code {
   letter-spacing: -0.03em;
 }
 
+/* トップページの英語併記ブロック。
+   本文と同じ文字色のまま、細い罫線で日本語の段落と切り分ける。 */
+.lede-en {
+  margin: 2.25rem 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+.lede-en p { margin: 0 0 1.1rem; }
+.lede-en p:last-child { margin-bottom: 0; }
+
+.lede-en__note { margin-top: 1.6rem; }
+
 /* ピルボタン（gaudiy の「くわしく見る ↗」風） */
 .pill-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0; }
 .pill {
