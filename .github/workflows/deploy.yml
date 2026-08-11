@@ -31,10 +31,21 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      # 翻訳の失敗でサイトのデプロイを止めない。英語版が古いままになるだけで、
+      # 日本語版の原稿は公開できるようにしておく。
       - name: Auto-translate JP → EN
+        id: translate
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: bun run translate
+
+      # continue-on-error は run 全体を success にしてしまうため、
+      # 失敗を警告として残して気づけるようにする。
+      - name: Warn if translation failed
+        if: steps.translate.outcome == 'failure'
+        run: |
+          echo "::warning title=英訳の生成に失敗しました::翻訳ステップが失敗したため contents/en は更新されていません。日本語版のビルドとデプロイは続行しています。原因は 'Auto-translate JP → EN' のログを確認してください。"
 
       - name: Commit generated translations
         run: |
