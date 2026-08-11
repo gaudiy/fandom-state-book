@@ -84,7 +84,8 @@ This repository holds a working draft of a book Gaudiy is currently producing in
 Rather than publishing only the finished text, we keep the manuscript in the open as it is written.
 It is not a final answer, but our best current hypothesis.
 
-Written and edited by members of Gaudiy. External pull requests are not accepted at this time.
+Written and edited by members of Gaudiy. External pull requests are not accepted at this time,
+but we welcome your thoughts — [get in touch with Gaudiy](https://gaudiy.com/en/contact).
 The Japanese edition is the source text; the English edition is generated from it.
 
 Text and figures are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
